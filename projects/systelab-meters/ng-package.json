@@ -1,0 +1,17 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "allowedNonPeerDependencies": ["chart.js", "chartjs-plugin-annotation", "chartjs-plugin-datalabels", "chartjs-adapter-date-fns","date-fns"],
+  "dest": "../../dist/systelab-meters",
+  "assets": [
+    "./README.md",
+    "./sass/**/*.scss",
+    "./assets/fonts/**/*.otf",
+    "./assets/fonts/**/*.txt",
+    "./src/assets/js/meter-charts/**/*.js",
+    "./src/assets/js/**/*.js",
+    "./src/assets/js/**/*.txt"
+  ],
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  }
+}

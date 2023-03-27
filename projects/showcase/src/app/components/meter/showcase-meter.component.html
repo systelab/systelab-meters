@@ -1,0 +1,152 @@
+<div class="container-fluid">
+    <div class="row mt-1">
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Line Chart with added manual line</showcase-title>
+            <systelab-meter #lineChart [labels]="labels" [data]="dataLine" [showLegend]="legend" [type]="'line'" [lineTension]="0.4"
+                            [xLabelAxis]="xLabelAxis" [yLabelAxis]="yLabelAxis" [tooltipSettings]="tooltipSettings" [chartLine]="chartLine"></systelab-meter>
+            <button class="btn btn-primary btn-sm" (click)="doChange();">Random Line Chart Values</button>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Line Chart - Multiple Axis</showcase-title>
+            <systelab-meter #lineChartMultipleAxis [labels]="labelsMultipleAxis" [data]="dataLineMultipleAxis" [showLegend]="legend"
+                            [legendPosition]="'bottom'"
+                            [type]="'line'" [lineTension]="0.4" [xLabelAxis]="xLabelAxis" [yLabelAxis]="yLabelAxis"
+                            [multipleYAxisScales]="multipleYAxisScales" [tooltipSettings]="tooltipSettings"
+                            [annotations]="chartLineMultipleAxisAnnotations"></systelab-meter>
+            <button class="btn btn-primary btn-sm" (click)="updateMultipleAxisExample();">Random Line Chart Values</button>
+        </div>
+
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Line Chart with timeline</showcase-title>
+            <systelab-meter #timelineChart [timeScale]="true" [data]="dataTimeLine" [showLegend]="legend" [type]="'line'"
+                            [xLabelAxis]="xLabelAxis" [yLabelAxis]="yLabelAxis" [tooltipSettings]="tooltipSettings" [timeUnit]="'month'" [tooltipTimeFormat]="'d, MMMM yyyy'"></systelab-meter>
+            <button class="btn btn-primary btn-sm" (click)="randomizeTimeLineChart();">Random TimeLine Chart Values</button>
+        </div>
+
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Bar Chart</showcase-title>
+            <systelab-meter [labels]="labels" [data]="dataBar" [showLegend]="legend" [type]="'bar'"></systelab-meter>
+        </div>
+        <div class="col-md-6 p-2">
+            <showcase-title [href]="'chart'">Horizontal Bar Chart</showcase-title>
+            <systelab-meter [labels]="labels" [data]="dataBar" [isHorizontal]="true" [showLegend]="legend"
+                            [type]="'bar'"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Radar Chart</showcase-title>
+            <systelab-meter [labels]="labels" [data]="dataRadar" [showLegend]="legend" [type]="'radar'"
+                            [isBackgroundGrid]="isBackgroundGrid"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Pie Chart</showcase-title>
+            <systelab-meter [labels]="labels" [data]="dataPie" [showLegend]="legend" [(itemSelected)]="itemSelected" [type]="'pie'"
+                            (action)="doAction($event)"
+                            [isBackgroundGrid]="isBackgroundGrid" [chartLabelSettings]="pieChartLabelSettings"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Doughnut Chart</showcase-title>
+            <systelab-meter [labels]="labels" [data]="dataDoughnut" [showLegend]="legendOff" [type]="'doughnut'"
+                            [isBackgroundGrid]="isBackgroundGrid"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Bubble Chart</showcase-title>
+            <systelab-meter [labels]="labels" [data]="dataBubble" [showLegend]="legend" [type]="'bubble'"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Polar Area Chart</showcase-title>
+            <systelab-meter [labels]="labels" [data]="dataPolarArea" [showLegend]="legend" [type]="'polarArea'"
+                            [isBackgroundGrid]="isBackgroundGrid"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Mixed Line Chart and Bar Chart</showcase-title>
+            <systelab-meter [labels]="labels" [data]="dataLineBar" [showLegend]="legend" [type]="'bar'"
+                            [lineTension]="0.4"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Line Chart with Annotation (Lines) Legend without color box</showcase-title>
+            <systelab-meter [labels]="labelLineAnnotations" [data]="dataLineAnnotation" [showLegend]="legend" [type]="'line'"
+                            [yMaxValue]="yMaxValue" [legendWithoutBox]="true"
+                            [yMinValue]="yMinValue" [annotations]="chartLineAnnotations" [xAutoSkip]="false"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Bubble Chart with Annotation (Box)</showcase-title>
+            <systelab-meter [labels]="labelLineAnnotations" [data]="dataBubbleAnnotations" [showLegend]="legendOff" [type]="'bubble'"
+                            [annotations]="chartBubbleAnnotations"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Bubble Chart with Annotation (Box-Lines)</showcase-title>
+            <systelab-meter [labels]="labelLineAnnotations" [data]="dataBubbleAnnotations" [showLegend]="legendOff" [type]="'bubble'"
+                            [annotations]="chartMultipleAnnotations"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Stacked Bar Chart</showcase-title>
+            <systelab-meter [labels]="labels" [data]="dataBar" [isStacked]="isStacked" [showLegend]="legend"
+                            [type]="'bar'"></systelab-meter>
+        </div>
+        <div class="col-md-6  p-2">
+            <showcase-title [href]="'chart'">Line Chart Custom Legend</showcase-title>
+            <systelab-meter #lineChartLegend [labels]="labels" [data]="dataLineCustomLegend" [showLegend]="legend" [type]="'line'"
+                            [lineTension]="0.4"
+                            [xLabelAxis]="xLabelAxis" [yLabelAxis]="yLabelAxis" [tooltipSettings]="tooltipSettings" [customLegend]="true"
+                            [legendPosition]="'bottom'"></systelab-meter>
+        </div>
+        <div class="col-md-6 p-2">
+            <showcase-title [href]="'chart'">Radial Meter Chart</showcase-title>
+            <button class="btn btn-primary btn-sm mb-2" (click)="doShowHistory('radialMeter');">Show History Data</button>
+            <systelab-meter #radialMeterChart [labels]="labelsChartMeterGadget" [data]="radialDataChartMeterGadget"
+                            [yMaxValue]="getVisualValue(radialChartGadgetConfiguration,radialDataChartMeterGadget, false)"
+                            [yMinValue]="getVisualValue(radialChartGadgetConfiguration,radialDataChartMeterGadget)"
+                            [showLegend]="false" [type]="'radialMeter'"
+                            [chartMeterConfiguration]="radialChartGadgetConfiguration"></systelab-meter>
+        </div>
+        <div class="col-md-6 p-2">
+            <showcase-title [href]="'chart'">Linear Meter Chart (horizontal)</showcase-title>
+            <button class="btn btn-primary btn-sm mb-2" (click)="doShowHistory('horizontalLinearMeter');">Show History Data</button>
+            <systelab-meter #horizontalLinearMeterChart [labels]="labelsChartMeterGadget" [data]="horizontalLinearDataChartMeterGadget"
+                            [yMaxValue]="getVisualValue(horizontalLinearChartGadgetConfiguration,horizontalLinearDataChartMeterGadget, false)"
+                            [yMinValue]="getVisualValue(horizontalLinearChartGadgetConfiguration,horizontalLinearDataChartMeterGadget)"
+                            [showLegend]="false" [type]="'linearMeter'" [isHorizontal]="true"
+                            [chartMeterConfiguration]="horizontalLinearChartGadgetConfiguration"></systelab-meter>
+        </div>
+        <div class="col-md-6 p-2">
+            <showcase-title [href]="'chart'">Linear Meter Chart (vertical)</showcase-title>
+            <button class="btn btn-primary btn-sm mb-2" (click)="doShowHistory('verticalLinearMeter');">Show History Data</button>
+            <systelab-meter #verticalLinearMeterChart [labels]="labelsChartMeterGadget" [data]="verticalLinearDataChartMeterGadget"
+                            [yMaxValue]="getVisualValue(verticalLinearChartGadgetConfiguration,verticalLinearDataChartMeterGadget, false)"
+                            [yMinValue]="getVisualValue(verticalLinearChartGadgetConfiguration,verticalLinearDataChartMeterGadget)"
+                            [showLegend]="false" [type]="'linearMeter'" [isHorizontal]="false"
+                            [chartMeterConfiguration]="verticalLinearChartGadgetConfiguration"></systelab-meter>
+        </div>
+        <div class="col-md-6 p-2">
+            <showcase-title [href]="'chart'">Digital Meter Chart</showcase-title>
+            <button class="btn btn-primary btn-sm mb-2" (click)="doShowHistory('digitalMeter');">Show History Data</button>
+            <systelab-meter #digitalMeterChart [labels]="labelsChartMeterGadget" [data]="digitalDataChartMeterGadget"
+                            [yMaxValue]="getVisualValue(digitalChartGadgetConfiguration,digitalDataChartMeterGadget, false)"
+                            [yMinValue]="getVisualValue(digitalChartGadgetConfiguration,digitalDataChartMeterGadget)"
+                            [showLegend]="false" [type]="'digitalMeter'" [chartMeterConfiguration]="digitalChartGadgetConfiguration"
+                            [isStacked]="isStacked"></systelab-meter>
+        </div>
+        <div class="col-md-12 p-2 flex-column">
+            <showcase-title [href]="'chart'">Resizable Chart</showcase-title>
+            <div class="col-md-6 row">
+                <label for="defaultResizeWidth" class="col-form-label mr-2 col-md-1">Width: </label>
+                <input type="text" class="form-control rounded ml-4 col-md-1" id="defaultResizeWidth" [(ngModel)]="defaultResizeWidth"
+                       name="defaultResizeWidth">
+                <label for="defaultResizeHeight" class="col-form-label mr-2 col-md-1">Height: </label>
+                <input type="text" class="form-control rounded ml-4 col-md-1" id="defaultResizeHeight" [(ngModel)]="defaultResizeHeight"
+                       name="defaultResizeHeight">
+                <button class="btn btn-primary btn-sm ml-4 m-2" (click)="doResizeChart();">Resize Chart</button>
+                <button class="btn btn-primary btn-sm m-2" (click)="doUpdateChart();">Update Chart</button>
+            </div>
+            <div class="col-md-4">
+                <systelab-meter #resizableCChart [labels]="labels" [data]="dataLine" [showLegend]="legend" [type]="'line'"
+                                [lineTension]="0.4"
+                                [xLabelAxis]="xLabelAxis" [yLabelAxis]="yLabelAxis" [tooltipSettings]="tooltipSettings"
+                                [maintainAspectRatio]="false" [responsive]="true"></systelab-meter>
+                <div class="col-md-6">
+                    <img [src]="resizedImage" alt="Resized Image"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
