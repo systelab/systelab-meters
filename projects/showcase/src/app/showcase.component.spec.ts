@@ -1,6 +1,5 @@
 import {async, TestBed} from '@angular/core/testing';
 import { ShowcaseComponent } from './showcase.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShowcaseMeterComponent } from './components/meter/showcase-meter.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { SystelabMetersModule } from 'systelab-meters';
@@ -17,7 +16,6 @@ describe('ShowCaseComponent', () => {
 		TestBed.configureTestingModule({
 			imports:      [
 				BrowserModule,
-				BrowserAnimationsModule,
 				FormsModule,
 				SystelabMetersModule
 			],

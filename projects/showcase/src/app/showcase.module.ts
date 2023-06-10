@@ -4,14 +4,12 @@ import { ShowcaseComponent } from './showcase.component';
 import { FormsModule } from '@angular/forms';
 import { ShowcaseTitleComponent } from './components/showcase-title.component';
 import { ShowcaseMeterComponent } from './components/meter/showcase-meter.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShowcaseMetersComponent } from './components/showcase-meters.component';
 import { SystelabMetersModule } from "systelab-meters";
 
 @NgModule({
 	imports:      [
 		BrowserModule,
-		BrowserAnimationsModule,
 		FormsModule,
 		SystelabMetersModule
 	],
