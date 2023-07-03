@@ -57,12 +57,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": [
-              "chart.js",
-              "chartjs-plugin-datalabels",
-              "chartjs-plugin-annotation",
-              "date-fns"
-            ],
             "outputPath": "dist/showcase",
             "index": "projects/showcase/src/index.html",
             "main": "projects/showcase/src/main.ts",

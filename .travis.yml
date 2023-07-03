@@ -2,8 +2,14 @@ sudo: required
 dist: jammy
 language: node_js
 node_js:
-  - '14.20.1'
+  - '18.12.1'
 addons:
+  apt:
+    update: true
+    sources:
+      - google-chrome
+    packages:
+      - dpkg
   chrome: stable
 
 services:
@@ -26,9 +32,10 @@ before_deploy:
   - cd dist/systelab-meters
 
 deploy:
+  skip_cleanup: true
   provider: npm
   email: aserra@werfen.com
+  edge: true
   api_key: $NPM_TOKEN
-  skip_cleanup: true
   on:
     tags: true

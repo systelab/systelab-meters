@@ -1,7 +1,9 @@
 import { ModuleWithProviders, NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MeterComponent } from './meter/meter.component';
 import { FormsModule } from '@angular/forms';
+import { DigitalMeterComponent } from './meter/digital/digital-meter.component';
+import { RadialMeterComponent } from './meter/radial/radial-meter.component';
+import { LinearMeterComponent } from './meter/linear/linear-meter.component';
 
 
 
@@ -11,10 +13,14 @@ import { FormsModule } from '@angular/forms';
 		FormsModule,
 	],
 	declarations: [
-		MeterComponent,
+		DigitalMeterComponent,
+		RadialMeterComponent,
+		LinearMeterComponent,
 	],
 	exports: [
-		MeterComponent,
+		DigitalMeterComponent,
+		RadialMeterComponent,
+		LinearMeterComponent,
 	]
 })
 export class SystelabMetersModule {
