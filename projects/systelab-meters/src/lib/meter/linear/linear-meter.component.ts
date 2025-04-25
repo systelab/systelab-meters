@@ -4,8 +4,9 @@ import { DecimalFormat } from '../../../assets/js/decimalFormat';
 import { MeterUtil } from '../meter.util';
 
 @Component({
-	selector:    'systelab-linear-meter',
-	templateUrl: './linear-meter.component.html'
+    selector: 'systelab-linear-meter',
+    templateUrl: './linear-meter.component.html',
+    standalone: false
 })
 export class LinearMeterComponent implements AfterViewInit {
 	@ViewChild('canvas', {static: true}) canvas: ElementRef;

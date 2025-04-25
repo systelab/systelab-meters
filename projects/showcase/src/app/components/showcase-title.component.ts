@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-	selector: 'showcase-title',
-	template: `
+    selector: 'showcase-title',
+    template: `
 	          <div class="pl-2 pt-2 pb-2">
                 <h4 class="d-inline"><ng-content></ng-content></h4>
                 <a href="https://github.com/systelab/systelab-meters/tree/master/src/app/showcase/components/{{href}}"
@@ -11,12 +11,13 @@ import { Component, Input } from '@angular/core';
                 </a>
             </div>
 	          `,
-	styles: [`
+    styles: [`
 	img {
       position: relative;
 			top: -4px;
 			left: 4px;
-	}`]
+	}`],
+    standalone: false
 })
 export class ShowcaseTitleComponent {
 	@Input() title = '';

@@ -3,8 +3,9 @@ import { MeterUtil } from '../meter.util';
 import { ChartMeterData } from '../chart-meter.model';
 
 @Component({
-	selector:    'systelab-digital-meter',
-	templateUrl: './digital-meter.component.html'
+    selector: 'systelab-digital-meter',
+    templateUrl: './digital-meter.component.html',
+    standalone: false
 })
 export class DigitalMeterComponent implements AfterViewInit {
 	@ViewChild('canvas', {static: true}) canvas: ElementRef;
