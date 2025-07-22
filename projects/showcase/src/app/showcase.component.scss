@@ -1,6 +1,6 @@
 
 // we must set bootstrap variables before importing bootstrap
-@import "../../../../node_modules/bootstrap/scss/bootstrap";
+@use "bootstrap/scss/bootstrap" as *;
 
 
 .principal-container {
