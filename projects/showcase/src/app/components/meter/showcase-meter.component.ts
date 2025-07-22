@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector:    'showcase-meter',
-	templateUrl: './showcase-meter.component.html'
+    selector: 'showcase-meter',
+    templateUrl: './showcase-meter.component.html',
+    standalone: false
 })
 export class ShowcaseMeterComponent {
 

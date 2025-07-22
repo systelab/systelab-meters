@@ -4,8 +4,9 @@ import { DecimalFormat } from '../../../assets/js/decimalFormat';
 import { MeterUtil } from '../meter.util';
 
 @Component({
-	selector:    'systelab-radial-meter',
-	templateUrl: './radial-meter.component.html'
+    selector: 'systelab-radial-meter',
+    templateUrl: './radial-meter.component.html',
+    standalone: false
 })
 export class RadialMeterComponent implements AfterViewInit {
 	@ViewChild('canvas', {static: true}) canvas: ElementRef;
